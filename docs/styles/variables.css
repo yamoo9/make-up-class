@@ -1,0 +1,18 @@
+:root {
+  --black: #000000FF;
+  --stone-100: #F3F4F4FF;
+  --stone-200: #E6E7E8FF;
+  --stone-300: #D2D4D5FF;
+  --stone-400: #B6BBBCFF;
+  --stone-50: #F9FAFAFF;
+  --stone-500: #979C9EFF;
+  --stone-600: #787E80FF;
+  --stone-700: #626769FF;
+  --stone-800: #515657FF;
+  --stone-900: #45494AFF;
+  --stone-950: #272A2BFF;
+  --white: #FFFFFFFF;
+
+  --fg: var(--black);
+  --bg: var(--white);
+}

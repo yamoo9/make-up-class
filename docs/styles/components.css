@@ -1,0 +1,24 @@
+.Logo {
+  
+  .Logo__symbol {
+    --width: 235px;
+    --height: 102px;
+    --color: var(--fg);
+    --font-size: 90px;
+    --font-weight: 900; /* heavy */
+
+    position: relative;
+    inline-size: var(--width);
+    block-size: var(--height);
+    color: var(--color);
+ 
+    & span {
+      position: absolute;
+      color: inherit;
+      font-size: var(--font-size);
+      font-weight: var(--font-weight);
+      line-height: 1;
+    }
+  }
+
+}
