@@ -1,24 +1,106 @@
 .Logo {
+  --speed: 300ms;
+  --delay-base: 200ms;
+  --animation-name: rotateFadeIn;
+
+  user-select: none;
+  margin-block-start: 200px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   
   .Logo__symbol {
     --width: 235px;
     --height: 102px;
+    --font-size: 5.625rem;
+    --font-weight: 900;
     --color: var(--fg);
-    --font-size: 90px;
-    --font-weight: 900; /* heavy */
 
     position: relative;
     inline-size: var(--width);
     block-size: var(--height);
     color: var(--color);
+
+    &.guide {
+      background: url('/assets/images/Logo.svg') no-repeat left top;
+    }
  
     & span {
+      opacity: 0;
+      animation: var(--animation-name) var(--speed) var(--ease-out-cubic) forwards;
+
       position: absolute;
       color: inherit;
       font-size: var(--font-size);
       font-weight: var(--font-weight);
       line-height: 1;
+
+      &[data-consonant="ㄱ"] {
+        left: 0px;
+        top: -19px;
+        animation-delay: calc(var(--delay-base) * 1);
+      }
+      &[data-consonant="ㅊ"] {
+        left: -9px;
+        bottom: -18px;
+        animation-delay: calc(var(--delay-base) * 2);
+      }
+      &[data-consonant="ㅇ"] {
+        left: 57px;
+        bottom: -3px;
+        animation-delay: calc(var(--delay-base) * 3);
+      }
+      &[data-consonant="두번째\:ㅇ"] {
+        right: 51px;
+        top: -20px;
+        animation-delay: calc(var(--delay-base) * 4);
+      }
+      &[data-consonant="ㄴ"] {
+        right: 35px;
+        bottom: -25px;
+        animation-delay: calc(var(--delay-base) * 5);
+      }
+      &[data-consonant="ㄷ"] {
+        right: -12px;
+        bottom: 1px;
+        animation-delay: calc(var(--delay-base) * 6);
+      }
     }
+
+  }
+  
+  & figcaption {
+    --animation-name: toBottomFadeIn;
+    --delay: calc(var(--delay-base) * 7);
+
+    user-select: auto;
+    opacity: 0;
+    animation: var(--animation-name) var(--speed) var(--ease-out-cubic) var(--delay) forwards;
   }
 
+}
+
+@keyframes rotateFadeIn {
+  0% {
+    opacity: 0;
+    translate: -10px -10px;
+    rotate: -12deg;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes toBottomFadeIn {
+  0% {
+    opacity: 0;
+    translate: 0px -20px;
+  }
+  100% {
+    opacity: 1;
+    translate: 0 0;
+  }
 }
