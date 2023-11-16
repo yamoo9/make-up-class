@@ -4,12 +4,12 @@
   --animation-name: rotateFadeIn;
 
   user-select: none;
-  margin-block-start: 200px;
+  margin: 0;
   display: flex;
   flex-flow: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 38px;
   
   .Logo__symbol {
     --width: 235px;
@@ -28,14 +28,16 @@
     }
  
     & span {
-      opacity: 0;
-      animation: var(--animation-name) var(--speed) var(--ease-out-cubic) forwards;
-
       position: absolute;
       color: inherit;
       font-size: var(--font-size);
       font-weight: var(--font-weight);
       line-height: 1;
+
+      @media (prefers-reduced-motion: no-preference) {
+        opacity: 0;
+        animation: var(--animation-name) var(--speed) var(--ease-out-cubic) forwards;
+      }
 
       &[data-consonant="ㄱ"] {
         left: 0px;
@@ -76,8 +78,11 @@
     --delay: calc(var(--delay-base) * 7);
 
     user-select: auto;
-    opacity: 0;
-    animation: var(--animation-name) var(--speed) var(--ease-out-cubic) var(--delay) forwards;
+
+    @media (prefers-reduced-motion: no-preference) {
+      opacity: 0;
+      animation: var(--animation-name) var(--speed) var(--ease-out-cubic) var(--delay) forwards;
+    }
   }
 
 }
