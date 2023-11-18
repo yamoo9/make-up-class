@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "browser-sync docs -w"
+    "dev": "browser-sync docs -w --no-notify"
   },
   "devDependencies": {
     "browser-sync": "2.29.3"

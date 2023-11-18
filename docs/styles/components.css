@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   gap: 38px;
-  
+
   .Logo__symbol {
     --width: 235px;
     --height: 102px;
@@ -26,7 +26,7 @@
     &.guide {
       background: url('/assets/images/Logo.svg') no-repeat left top;
     }
- 
+
     & span {
       position: absolute;
       color: inherit;
@@ -44,26 +44,31 @@
         top: -19px;
         animation-delay: calc(var(--delay-base) * 1);
       }
+
       &[data-consonant="ㅊ"] {
         left: -9px;
         bottom: -18px;
         animation-delay: calc(var(--delay-base) * 2);
       }
+
       &[data-consonant="ㅇ"] {
         left: 57px;
         bottom: -3px;
         animation-delay: calc(var(--delay-base) * 3);
       }
+
       &[data-consonant="두번째\:ㅇ"] {
         right: 51px;
         top: -20px;
         animation-delay: calc(var(--delay-base) * 4);
       }
+
       &[data-consonant="ㄴ"] {
         right: 35px;
         bottom: -25px;
         animation-delay: calc(var(--delay-base) * 5);
       }
+
       &[data-consonant="ㄷ"] {
         right: -12px;
         bottom: 1px;
@@ -72,7 +77,7 @@
     }
 
   }
-  
+
   & figcaption {
     --animation-name: toBottomFadeIn;
     --delay: calc(var(--delay-base) * 7);
@@ -87,25 +92,37 @@
 
 }
 
-@keyframes rotateFadeIn {
-  0% {
-    opacity: 0;
-    translate: -10px -10px;
-    rotate: -12deg;
+
+.line {
+  inline-size: 0;
+  block-size: 240px;
+  transform-origin: center top;
+
+  &::before {
+    content: '';
+    display: block;
+    block-size: 100%;
+    border-right: 0.5px solid var(--stone-400, #b6bbbc);
+    translate: -0.5px;
   }
-  100% {
-    opacity: 1;
-    translate: 0 0;
+
+  @media (prefers-reduced-motion: no-preference) {
+    &::before {
+      block-size: 0%;
+      animation: slideBlockSize 800ms var(--ease-out-quint) 1.8s forwards;
+    }
   }
 }
 
-@keyframes toBottomFadeIn {
-  0% {
+
+.release {
+  color: var(--fg);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1;
+
+  @media (prefers-reduced-motion: no-preference) {
     opacity: 0;
-    translate: 0px -20px;
-  }
-  100% {
-    opacity: 1;
-    translate: 0 0;
+    animation: fadeIn 600ms var(--ease-out-quint) 2.4s forwards;
   }
 }
