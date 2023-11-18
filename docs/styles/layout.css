@@ -1,4 +1,9 @@
 body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
   font-family: "SUIT Variable", Arial, Helvetica, sans-serif;
 
   background-color: var(--bg);
@@ -7,5 +12,16 @@ body {
   @media (prefers-color-scheme: dark) {
     --bg: var(--black);
     --fg: var(--white);
+  }
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 60px;
+
+  & h1 {
+    margin-block: 0;
   }
 }

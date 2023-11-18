@@ -1,45 +1,93 @@
 .Logo {
-  
+  user-select: none;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  gap: 38px;
+
   .Logo__symbol {
     --width: 235px;
     --height: 102px;
     --color: var(--fg);
     --font-size: 90px;
-    --font-weight: 900; /* heavy */
+    --font-weight: 900;
 
     position: relative;
     inline-size: var(--width);
     block-size: var(--height);
     color: var(--color);
-    border: 1px solid;
- 
+    
+    &.guide {
+      border: 1px solid var(--stone-400);
+      background: url('/assets/images/logo-guide.svg') no-repeat center / contain;
+    }
+
     & span {
       position: absolute;
       color: inherit;
       font-size: var(--font-size);
       font-weight: var(--font-weight);
       line-height: 1;
-      display: none;
+      /* display: none; */
 
       &[data-consonant="ㄱ"] {
-        display: block;
+        left: 0px;
+      top: -19px;
       }
-      &[data-consonant="ㅊ"] {
-        
+      &[
+      data-consonant="ㅊ"] {
+        left: -8px;
+      bottom: -18px;
       }
-      &[data-consonant="ㅇ"] {
-        
+      &[
+      data-consonant="ㅇ"] {
+        left: 57px;
+      bottom: -3px;
       }
-      &[data-consonant="두번째\:ㅇ"] {
-        
+      &[
+      data-consonant="두번째\:ㅇ"] {
+        right: 51px;
+      top: -20px;
       }
-      &[data-consonant="ㄴ"] {
-        
+      &[
+      data-consonant="ㄴ"] {
+        right: 35px;
+      bottom: -25px;
       }
-      &[data-consonant="ㄷ"] {
-        
+      &[
+      data-consonant="ㄷ"] {
+        right: -12px;
+      bottom: 1px;
       }
     }
   }
 
+  & figcaption {
+    user-select: auto;
+  }
+
+}
+
+.line {
+  inline-size: 0;
+  block-size: 240px; 
+  transform-origin: center top;
+
+  &::before {
+    content: '';
+    display: block;
+    block-size: 100%;
+    border-right: 0.5px solid var(--stone-400);
+    translate: -0.5px 0;
+  }
+}
+
+.release {
+  color: var(--fg);
+
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1;
 }
