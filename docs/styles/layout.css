@@ -1,0 +1,11 @@
+body {
+  font-family: "SUIT Variable", Arial, Helvetica, sans-serif;
+
+  background-color: var(--bg);
+  color: var(--fg);
+
+  @media (prefers-color-scheme: dark) {
+    --bg: var(--black);
+    --fg: var(--white);
+  }
+}
